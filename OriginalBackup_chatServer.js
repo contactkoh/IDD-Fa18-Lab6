@@ -30,7 +30,7 @@ io.on('connect', function(socket) {
   var questionNum = 0; // keep count of question, used for IF condition.
   socket.on('loaded', function() { // we wait until the client has loaded and contacted us that it is ready to go.
 
-    socket.emit('answer', "Hey, hello I am a Virtual English Teacher, a simple chat bot example."); //We start with the introduction;
+    socket.emit('answer', "Hey, hello I am Lawbot, a simple chat bot example."); //We start with the introduction;
     setTimeout(timedQuestion, 5000, socket, "What is your name?"); // Wait a moment and respond with a question.
 
   });
@@ -49,9 +49,7 @@ function bot(data, socket, questionNum) {
   var question;
   var waitTime;
    
-  var questions = [ "What fruit has red color and starts with A?", "What sport requires clubs and drivers and starts with G?", "What animal has four legs and barks, that start with D?" ]; // me: testing multiple answers to remember 
-  var answers = [ "Apple" , "Golf", "Dog" ];
-  var Guess_index = 0;
+  var answers []; // me: testing multiple answers to remember 
 
   /// These are the main statments that make up the conversation.
   if (questionNum == 0) {
@@ -89,35 +87,6 @@ function bot(data, socket, questionNum) {
       waitTime = 5000;
     }
     // load next question
-  } else if (questionNum ==5) {
-    answer = 'I wish I could go to ' + input + ', but I have no time...';
-    waitTime = 5000;
-    question = 'Do you want to play a Guessing Game?  I will describe something and you type in what it is in correct spelling.';
-  } else if (questionNum == 6) {
-    if (input.toLowerCase() === 'yes' || input === 1) {
-      answer = 'Ready?  Here we go!';
-      waitTime = 5000;
-      question = questions[Guess_index];  //me: testing using array of questions and answers
-    } else if (input.toLowerCase() === 'no' || input === 0){ 
-      answer = 'Ok. You do not want to play the Word Chain...';
-      waitTime = 5000;
-      questionNum = 1000;  // me: I have nothing more to say and End 
-    } else {
-      //question = 'Do you still want to play the Word Chain?'; 
-      answer = 'I did not understand you. Could you answer "yes" or "no"?'
-      questionNum--;
-      waitTime = 5000;
-    }
-  } else if (questionNum==7) {   //me: Playing the Guessing Game (Beta Version:)
-    if (input.toLowerCase() === answers[Guess_index].toLowerCase()) {
-      answer = 'That is correct!'; 
-      waitTime = 5000;
-      question = 'Do you want to play again?';
-      Guess_index++;  // me: go to Next Guessing Question
-      questionNum--;   
-    }
-
-
   } else {
     answer = 'I have nothing more to say!'; // output response
     waitTime = 0;
