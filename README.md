@@ -22,5 +22,8 @@ If wrong answer, the question can loop. If right answer, user can decide to go t
 
 **Using a phone or other video device, record someone trying out your ChatBot. Upload that video to this repository and link to it here!**
 
+[![Watch the video](https://img.youtube.com/vi/LBuOWJ5p24I/0.jpg)]( https://youtu.be/LBuOWJ5p24I)  Chatbot playing Guessing game
+
+
 ---
 Starter code by [David Goedicke](mailto:da.goedicke@gmail.com), closely based on work by [Nikolas Martelaro](mailto:nmartelaro@gmail.com) and [Captain Anonymous](https://codepen.io/anon/pen/PEVYXz), who forked original work by [Ian Tairea](https://codepen.io/mrtairea/pen/yJapwv).
